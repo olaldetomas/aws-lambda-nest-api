@@ -1,18 +1,15 @@
-service:
-  name: basic-starter-nestjs
+service: serverless-example
 
 plugins:
-  - serverless-plugin-typescript
-  - serverless-plugin-optimize
   - serverless-offline
 
 provider:
   name: aws
-  Runtime: nodejs20.x
+  runtime: nodejs14.x
 
 functions:
   main:
-    handler: src/lambda.handler
+    handler: dist/main.handler
     events:
       - http:
           method: ANY
